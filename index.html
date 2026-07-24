@@ -68,6 +68,7 @@ h1 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 600; line-hei
 .greeting .user-name-slot { font-weight: 700; color: var(--rose-deep); }
 .avatar .user-initial-slot { width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:#fff; font-family:'Fraunces',serif; font-size:22px; }
 .name-modal-overlay { position: fixed; inset: 0; background: rgba(58,47,48,.45); display: none; align-items: center; justify-content: center; z-index: 999; padding: 20px; }
+.pw-gate-overlay { position: fixed; inset: 0; background: var(--bg); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px; }
 .name-modal-box { background: var(--card); border-radius: 18px; padding: 32px 28px; max-width: 340px; width: 100%; text-align: center; box-shadow: 0 12px 40px rgba(58,47,48,.25); }
 .name-modal-title { font-family: 'Fraunces', serif; font-size: 20px; margin: 0 0 6px; color: var(--ink); }
 .name-modal-sub { font-size: 14px; color: var(--ink-soft); margin: 0 0 18px; }
@@ -93,6 +94,15 @@ h1 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 600; line-hei
       <span class="brand-name">Mumty</span>
     </div>
   </div>
+  <div class="pw-gate-overlay" id="pw-gate">
+  <div class="name-modal-box">
+    <p class="name-modal-title">Willkommen bei AlphaMUM</p>
+    <p class="name-modal-sub">Bitte gib deinen Zugangscode ein.</p>
+    <input id="pw-input" type="password" placeholder="Zugangscode" onkeydown="if(event.key==='Enter')checkAccessCode()">
+    <button class="submit-btn" onclick="checkAccessCode()">Los geht's</button>
+    <p id="pw-error" style="color:var(--rose-deep); font-size:13px; margin-top:10px; display:none;">Das war nicht der richtige Code — versuch's nochmal.</p>
+  </div>
+</div>
   <div class="name-modal-overlay" id="name-modal">
   <div class="name-modal-box">
     <p class="name-modal-title">Schön, dass du da bist!</p>
@@ -154,6 +164,26 @@ h1 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 600; line-hei
   <p class="footer-note">AlphaMUM · MUMTY Business-Aufbauprogramm</p>
 </div>
 <script>
+
+const ALPHAMUM_ACCESS_CODE = "alphamum2026";
+function checkAccessCode() {
+  const val = document.getElementById('pw-input').value.trim();
+  if (val === ALPHAMUM_ACCESS_CODE) {
+    localStorage.setItem('alphamum_access_ok', 'true');
+    document.getElementById('pw-gate').style.display = 'none';
+  } else {
+    document.getElementById('pw-error').style.display = 'block';
+  }
+}
+function initPasswordGate() {
+  if (localStorage.getItem('alphamum_access_ok') === 'true') {
+    document.getElementById('pw-gate').style.display = 'none';
+  } else {
+    document.getElementById('pw-gate').style.display = 'flex';
+  }
+}
+initPasswordGate();
+
 
 function getUserName() { return localStorage.getItem('alphamum_name'); }
 function applyName(name) {
