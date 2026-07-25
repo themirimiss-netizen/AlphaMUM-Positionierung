@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AlphaMUM — Business-Aufbauprogramm</title>
+<title>AlphaMUM — Modul 3: Das richtige Mindset</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
@@ -74,25 +74,17 @@ h1 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 600; line-hei
 .name-modal-box input { width: 100%; border: 0.5px solid var(--line); border-radius: 10px; padding: 10px 14px; font-family: 'Lato', sans-serif; font-size: 15px; margin-bottom: 14px; text-align: center; }
 .name-modal-box input:focus { outline: none; border-color: var(--rose); }
 .name-modal-box .submit-btn { width: 100%; justify-content: center; padding: 12px; }
-
-.course-card { display:flex; align-items:center; gap:16px; background:var(--card); border:0.5px solid var(--line); border-radius:14px; padding:16px 20px; margin-bottom:12px; text-decoration:none; color:var(--ink); box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 4px 12px rgba(169,91,104,.06); transition: transform .15s ease; }
-.course-card:hover { transform: translateY(-2px); }
-.course-card.disabled { opacity: .5; cursor: default; }
-.course-num { width:34px; height:34px; border-radius:50%; background:linear-gradient(135deg,var(--apricot),var(--rose)); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:600; flex-shrink:0; }
-.course-eyebrow { font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--rose-deep); }
-.course-title { font-family:'Fraunces',serif; font-size:17px; }
-.course-arrow { margin-left:auto; color:var(--rose); font-size:14px; }
-.section-label { font-size:13px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); margin: 28px 0 12px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="brand-row">
-    <div class="brand-left">
-      <video autoplay loop muted playsinline><source src="mumty-logo-animation.mp4" type="video/mp4"></video>
-      <span class="brand-name">Mumty</span>
-    </div>
+  <div class="brand-left">
+    <video autoplay loop muted playsinline><source src="mumty-logo-animation.mp4" type="video/mp4"></video>
+    <span class="brand-name">Mumty</span>
   </div>
+  <a class="back-link" href="positionierung.html">← Übersicht</a>
+</div>
   <div class="name-modal-overlay" id="name-modal">
   <div class="name-modal-box">
     <p class="name-modal-title">Schön, dass du da bist!</p>
@@ -101,59 +93,121 @@ h1 { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 600; line-hei
     <button class="submit-btn" onclick="submitName()">Los geht's</button>
   </div>
 </div>
-
   <div class="hero">
-    <div class="avatar"><img src="miriam-portrait.jpg" alt="Miriam"></div>
+    <div class="avatar"><span class="user-initial-slot">?</span></div>
     <div>
       <p class="greeting">Hallo <span class="user-name-slot">du</span> 👋</p>
-      <p class="eyebrow">AlphaMUM</p>
-      <h1>Dein Business-Aufbauprogramm</h1>
+      <p class="eyebrow">AlphaMUM · Modul 3</p>
+      <h1>Das richtige Mindset</h1>
     </div>
   </div>
-  <p class="intro">Willkommen bei AlphaMUM. Wähl das Programm, mit dem du gerade arbeitest — jedes Programm baut auf dem vorherigen auf, du kannst aber jederzeit zurückspringen.</p>
 
-  <div class="section-label">Deine Programme</div>
-  
-    <a class="course-card" href="positionierung.html">
-      <div class="course-num">✓</div>
-      <div>
-        <div class="course-eyebrow">Programm 1</div>
-        <div class="course-title">Positionierung</div>
-        <div style="font-size:12.5px; color:var(--ink-soft); margin-top:2px;">41 Lektionen · Mindset, Zielgruppe, Mitbewerber, Produkt & Wording</div>
-      </div>
-      <div class="course-arrow">→</div>
-    </a>
-    <div class="course-card disabled">
-      <div class="course-num">·</div>
-      <div>
-        <div class="course-eyebrow">Programm 2</div>
-        <div class="course-title">Online Marketing</div>
-        <div style="font-size:12.5px; color:var(--ink-soft); margin-top:2px;">Kommt als Nächstes</div>
-      </div>
-      <div class="course-arrow">bald</div>
-    </div>
-    <div class="course-card disabled">
-      <div class="course-num">·</div>
-      <div>
-        <div class="course-eyebrow">Programm 3</div>
-        <div class="course-title">Launches</div>
-        <div style="font-size:12.5px; color:var(--ink-soft); margin-top:2px;">Kommt als Nächstes</div>
-      </div>
-      <div class="course-arrow">bald</div>
-    </div>
-    <div class="course-card disabled">
-      <div class="course-num">·</div>
-      <div>
-        <div class="course-eyebrow">Programm 4</div>
-        <div class="course-title">KI im Business</div>
-        <div style="font-size:12.5px; color:var(--ink-soft); margin-top:2px;">Kommt als Nächstes</div>
-      </div>
-      <div class="course-arrow">bald</div>
-    </div>
+  <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+  <div class="progress-label" id="progress-label"></div>
 
-  <p class="footer-note">AlphaMUM · MUMTY Business-Aufbauprogramm</p>
+  <div class="card">
+    
+<p>Viele Unternehmerinnen starten mit tollen Ideen — doch ohne klare Zielgruppe oder Positionierung kommen sie irgendwann an einen Punkt, an dem es nicht weitergeht.</p>
+<div class="example"><strong>Merksatz:</strong> Je nischiger du startest, desto mehr Erfolg wirst du mit deinem Business haben. Amazon war zunächst nur ein Online-Buchladen, Facebook startete als Verzeichnis für eine Universität.</div>
+<p>Du gehst auch nicht in ein Restaurant, das Döner, Pizza, Pasta und Burger auf der Karte hat, oder? Fokussiere dich auf deine Kernexpertise und Zielgruppe.</p>
+<div class="reflect"><span class="reflect-q">6. Bist du gerade zu breit aufgestellt? Wo könntest du dich weiter fokussieren?</span><textarea placeholder="Welches Thema, welche Zielgruppe, welches Angebot würdest du schärfen?" data-key="q6"></textarea></div>
+<button class="mark-done" onclick="toggleDone(this,1)">Lektion abgeschlossen</button>
+
+  </div>
+
+  <div class="nav-row"><a class="nav-btn" href="modul-2.html">← Modul 2</a><a class="nav-btn primary" href="modul-4.html">Modul 4 →</a></div>
+  <p class="footer-note">AlphaMUM · Teil des MUMTY Business-Aufbauprogramms</p>
 </div>
 <script>
+
+function toggleLesson(el) { el.classList.toggle('open'); }
+function saveState(storeKey) {
+  const data = {};
+  document.querySelectorAll('textarea').forEach(t => data[t.dataset.key] = t.value);
+  document.querySelectorAll('.checklist input[type=checkbox]').forEach(c => data[c.dataset.check] = c.checked);
+  document.querySelectorAll('.mark-done').forEach((b,i) => data['done_'+i] = b.classList.contains('active'));
+  try { localStorage.setItem(storeKey, JSON.stringify(data)); } catch(e) {}
+  try {
+    const all = JSON.parse(localStorage.getItem('alphamum_progress') || '{}');
+    const filled = document.querySelectorAll('textarea');
+    let done = 0; filled.forEach(t => { if (t.value.trim().length>0) done++; });
+    all[storeKey] = { total: filled.length, done: done };
+    localStorage.setItem('alphamum_progress', JSON.stringify(all));
+  } catch(e) {}
+}
+function loadState(storeKey) {
+  try {
+    const raw = localStorage.getItem(storeKey);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    document.querySelectorAll('textarea').forEach(t => { if (data[t.dataset.key]) t.value = data[t.dataset.key]; });
+    document.querySelectorAll('.checklist input[type=checkbox]').forEach(c => { if (data[c.dataset.check]) c.checked = true; });
+    document.querySelectorAll('.mark-done').forEach((b,i) => { if (data['done_'+i]) b.click(); });
+  } catch(e) {}
+}
+function toggleDone(btn, idx) {
+  btn.classList.toggle('active');
+  btn.textContent = btn.classList.contains('active') ? 'Abgeschlossen' : 'Lektion abgeschlossen';
+}
+function updateProgress() {
+  const t = document.querySelectorAll('textarea');
+  let filled = 0; t.forEach(x => { if (x.value.trim().length>0) filled++; });
+  const pct = t.length ? Math.round(filled/t.length*100) : 100;
+  const f = document.getElementById('progress-fill'); if (f) f.style.width = pct + '%';
+  const l = document.getElementById('progress-label'); if (l) l.textContent = filled + ' von ' + t.length + ' Reflexionen beantwortet';
+}
+function encodeFormData(data) {
+  return Object.keys(data).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k])).join('&');
+}
+function submitAnswers(formName, moduleLabel) {
+  let id = localStorage.getItem('alphamum_session_id');
+  if (!id) { id = 'anon-' + Math.random().toString(36).slice(2) + Date.now(); localStorage.setItem('alphamum_session_id', id); }
+  const data = { 'form-name': formName, modul: moduleLabel, session_id: id };
+  document.querySelectorAll('textarea').forEach(t => data[t.dataset.key] = t.value);
+  fetch('/', { method: 'POST', headers: {'Content-Type':'application/x-www-form-urlencoded'}, body: encodeFormData(data) })
+    .then(() => {
+      document.getElementById('submit-button').disabled = true;
+      document.getElementById('submit-button').textContent = 'Eingesendet';
+      document.getElementById('submit-confirm').style.display = 'block';
+    }).catch(() => {
+      const c = document.getElementById('submit-confirm');
+      c.textContent = 'Senden hat nicht geklappt — versuch es gleich nochmal.';
+      c.style.color = 'var(--rose-deep)'; c.style.display = 'block';
+    });
+}
+function collectAllModuleData() {
+  const keys = ['alphamum_modul1','alphamum_modul2','alphamum_modul3','alphamum_modul4','alphamum_modul5','alphamum_modul51','alphamum_modul52','alphamum_modul53','alphamum_modul6','alphamum_modul61','alphamum_modul62','alphamum_modul63','alphamum_modul64','alphamum_modul65','alphamum_modul66','alphamum_modul67','alphamum_modul68','alphamum_modul7','alphamum_modul71','alphamum_modul72','alphamum_modul73','alphamum_modul74','alphamum_modul75','alphamum_modul76','alphamum_modul77','alphamum_modul_exkurs_gesundheit','alphamum_modul8','alphamum_modul9','alphamum_modul91','alphamum_modul92','alphamum_modul93','alphamum_modul94','alphamum_modul10','alphamum_modul101','alphamum_modul102','alphamum_modul103','alphamum_modul11','alphamum_modul111','alphamum_modul112','alphamum_modul12','alphamum_modul13'];
+  const merged = {};
+  keys.forEach(k => {
+    try {
+      const raw = localStorage.getItem(k);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      Object.keys(data).forEach(field => {
+        if (field.indexOf('done_') === 0) return;
+        merged[field] = data[field];
+      });
+    } catch(e) {}
+  });
+  return merged;
+}
+function submitAllAnswers() {
+  let id = localStorage.getItem('alphamum_session_id');
+  if (!id) { id = 'anon-' + Math.random().toString(36).slice(2) + Date.now(); localStorage.setItem('alphamum_session_id', id); }
+  const merged = collectAllModuleData();
+  const data = Object.assign({ 'form-name': 'alphamum-positionierung-gesamt', modul: 'Positionierung - Gesamt', session_id: id }, merged);
+  fetch('/', { method: 'POST', headers: {'Content-Type':'application/x-www-form-urlencoded'}, body: encodeFormData(data) })
+    .then(() => {
+      document.getElementById('submit-button').disabled = true;
+      document.getElementById('submit-button').textContent = 'Eingesendet';
+      document.getElementById('submit-confirm').style.display = 'block';
+    }).catch(() => {
+      const c = document.getElementById('submit-confirm');
+      c.textContent = 'Senden hat nicht geklappt — versuch es gleich nochmal.';
+      c.style.color = 'var(--rose-deep)'; c.style.display = 'block';
+    });
+}
+
 
 function getUserName() { return localStorage.getItem('alphamum_name'); }
 function applyName(name) {
@@ -174,6 +228,10 @@ function initNameGate() {
 }
 initNameGate();
 
+document.querySelectorAll('textarea').forEach(t => t.addEventListener('input', () => { saveState('alphamum_modul3'); updateProgress(); }));
+document.querySelectorAll('.checklist input[type=checkbox]').forEach(c => c.addEventListener('change', () => saveState('alphamum_modul3')));
+loadState('alphamum_modul3');
+updateProgress();
 </script>
 </body>
 </html>
